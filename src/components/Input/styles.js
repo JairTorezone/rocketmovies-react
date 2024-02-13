@@ -3,8 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background-color: ${({ theme }) => theme.COLORS.GRAY_400};
-  color: ${({ theme }) => theme.COLORS.GRAY_900};
 
   border-radius: 14px;
 
@@ -12,17 +15,17 @@ export const Container = styled.div`
     height: 56px;
     width: 100%;
 
-    padding: 19px 24px;
+    padding: 19px 16px;
 
     color: ${({ theme }) => theme.COLORS.WHITE};
     background: transparent;
     border: none;
 
-    &:placeholder {
-      color: ${({ theme }) => theme.COLORS.GRAY_300};
+    &::placeholder {
+      color: ${({ theme }) => theme.COLORS.GRAY_500};
     }
   }
   > svg {
-    margin-left: 16px;
+    margin-left: 18px;
   }
 `;
