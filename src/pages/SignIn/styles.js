@@ -31,6 +31,7 @@ export const Form = styled.form`
   > span {
     font-size: 14px;
     font-weight: 400;
+    margin-left: -20px;
 
     color: ${({ theme }) => theme.COLORS.GRAY_700};
   }
@@ -41,7 +42,7 @@ export const Form = styled.form`
 
     color: ${({ theme }) => theme.COLORS.WHITE};
 
-    margin: 48px 0px;
+    margin: 48px 0px 48px -140px;
   }
 
   > div {

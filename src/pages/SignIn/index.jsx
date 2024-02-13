@@ -1,8 +1,5 @@
-import { FiUser } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
-import { FaPlus } from "react-icons/fa6";
-import { FaArrowLeft } from "react-icons/fa";
 
 import { Input } from "../../components/Input";
 
@@ -17,16 +14,15 @@ export function SignIn() {
         <h1>RocketMovies</h1>
         <span>Aplicação para acompanhar tudo que assistir.</span>
 
-        <h3>Crie sua conta</h3>
+        <h3>Faça Seu Login</h3>
 
         <div>
-          <Input placeholder="Nome" icon={FiUser} />
           <Input placeholder="E-mail" icon={RiLockPasswordLine} />
           <Input placeholder="Senha" icon={MdOutlineEmail} />
-          <Button title="Cadstrar" icon={FaPlus} />
+          <Button title="Entrar" />
         </div>
 
-        <ToLink icon={FaArrowLeft} title="Voltar para o login" />
+        <ToLink title="Criar conta" />
       </Form>
 
       <Background />
