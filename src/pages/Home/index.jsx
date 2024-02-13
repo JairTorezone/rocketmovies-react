@@ -8,7 +8,7 @@ function Home() {
       <Header />
 
       <Content>
-        <h2>Meus Filmes</h2>
+        <h2>Meus Filmes </h2>
 
         <Assessment>
           <Card />

@@ -13,5 +13,8 @@ export default {
     GRAY_400: "#3E3B47",
     GRAY_500: "#948F99",
     GRAY_600: "#262529",
+    GRAY_700: "#CAC4CF",
   },
 };
+
+//  color: ${({ theme }) => theme.COLORS.WHITE};
