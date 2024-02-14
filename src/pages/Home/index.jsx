@@ -2,7 +2,7 @@ import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { Container, Content, Assessment } from "./styles";
 
-function Home() {
+export function Home() {
   return (
     <Container>
       <Header />
