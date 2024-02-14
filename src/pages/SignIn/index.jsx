@@ -1,11 +1,11 @@
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 import { Input } from "../../components/Input";
 
 import { Container, Form, Background } from "./styles";
 import { Button } from "../../components/Button";
-import { ToLink } from "../../components/ToLink";
 
 export function SignIn() {
   return (
@@ -22,7 +22,7 @@ export function SignIn() {
           <Button title="Entrar" />
         </div>
 
-        <ToLink title="Criar conta" />
+        <Link to="/register"> Criar conta</Link>
       </Form>
 
       <Background />

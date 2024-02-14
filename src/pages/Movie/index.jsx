@@ -1,5 +1,4 @@
 import { Header } from "../../components/Header";
-import { ToLink } from "../../components/ToLink";
 import { Input } from "../../components/Input";
 import { Textarea } from "../../components/Textarea";
 import { FaArrowLeft } from "react-icons/fa";
@@ -7,6 +6,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { Container, Form } from "./styles";
 import { NoteItem } from "../../components/NoteItem";
 import { Button } from "../../components/Button";
+import { Link } from "react-router-dom";
 
 export function Movie() {
   return (
@@ -15,7 +15,11 @@ export function Movie() {
 
       <main>
         <header>
-          <ToLink icon={FaArrowLeft} title="Voltar" />
+          <Link to="/home">
+            <FaArrowLeft />
+            Voltar
+          </Link>
+
           <h2>Novo filme</h2>
         </header>
 

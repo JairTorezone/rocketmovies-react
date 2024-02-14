@@ -8,7 +8,7 @@ import { Input } from "../../components/Input";
 
 import { Container, Form, Background } from "./styles";
 import { Button } from "../../components/Button";
-import { ToLink } from "../../components/ToLink";
+import { Link } from "react-router-dom";
 
 export function SignUp() {
   return (
@@ -16,9 +16,7 @@ export function SignUp() {
       <Form>
         <h1>RocketMovies</h1>
         <span>Aplicação para acompanhar tudo que assistir.</span>
-
         <h3>Crie sua conta</h3>
-
         <div>
           <Input placeholder="Nome" icon={FiUser} />
           <Input placeholder="E-mail" icon={RiLockPasswordLine} />
@@ -26,7 +24,10 @@ export function SignUp() {
           <Button title="Cadstrar" icon={FaPlus} />
         </div>
 
-        <ToLink icon={FaArrowLeft} title="Voltar para o login" />
+        <Link to="/">
+          <FaArrowLeft />
+          Voltar para o login
+        </Link>
       </Form>
 
       <Background />

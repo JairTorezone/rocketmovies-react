@@ -17,6 +17,20 @@ export const Container = styled.div`
 
     overflow-y: auto;
 
+    > a {
+      font-size: 16px;
+      font-weight: 400;
+
+      color: ${({ theme }) => theme.COLORS.PINK};
+
+      display: flex;
+      align-items: center;
+
+      > svg {
+        margin-right: 8px;
+        font-size: 16px;
+      }
+    }
     .title {
       margin-top: 24px;
 

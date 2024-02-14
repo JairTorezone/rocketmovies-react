@@ -3,18 +3,21 @@ import { FiUser } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
 
-import { ToLink } from "../../components/ToLink";
 import { Input } from "../../components/Input";
 import { CiCamera } from "react-icons/ci";
 
 import { Container, Header, Form, ProfileImg } from "./styles";
 import { Button } from "../../components/Button";
+import { Link } from "react-router-dom";
 
 export function Profile() {
   return (
     <Container>
       <Header>
-        <ToLink icon={FaArrowLeft} title="Voltar" />
+        <Link to="/home">
+          <FaArrowLeft />
+          Voltar
+        </Link>
       </Header>
 
       <main>

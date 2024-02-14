@@ -1,12 +1,12 @@
 import { IoTimeOutline } from "react-icons/io5";
 import { FaArrowLeft } from "react-icons/fa";
-import { ToLink } from "../../components/ToLink";
 
 import { Header } from "../../components/Header";
 import { Star } from "../../components/Star";
 import { ButtonText } from "../../components/ButtonText";
 
 import { Container } from "./styles";
+import { Link } from "react-router-dom";
 
 export function Preview() {
   return (
@@ -14,7 +14,11 @@ export function Preview() {
       <Header />
 
       <main>
-        <ToLink title="Voltar" icon={FaArrowLeft} />
+        <Link to="/home">
+          <FaArrowLeft />
+          Voltar
+        </Link>
+
         <section className="title">
           <h2>Interestellar</h2>
 

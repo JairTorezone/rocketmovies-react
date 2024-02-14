@@ -23,6 +23,21 @@ export const Container = styled.div`
       width: 100%;
       max-width: 1113px;
 
+      > a {
+        font-size: 16px;
+        font-weight: 400;
+
+        color: ${({ theme }) => theme.COLORS.PINK};
+
+        display: flex;
+        align-items: center;
+
+        > svg {
+          margin-right: 8px;
+          font-size: 16px;
+        }
+      }
+
       > h2 {
         margin-top: 18px;
         font-size: 32px;

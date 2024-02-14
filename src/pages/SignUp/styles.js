@@ -56,6 +56,20 @@ export const Form = styled.form`
       margin-bottom: 42px;
     }
   }
+
+  > a {
+    font-size: 16px;
+    font-weight: 400;
+
+    color: ${({ theme }) => theme.COLORS.PINK};
+
+    display: flex;
+    align-items: center;
+
+    > svg {
+      margin-right: 8px;
+    }
+  }
 `;
 
 export const Background = styled.div`

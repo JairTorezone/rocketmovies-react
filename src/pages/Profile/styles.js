@@ -25,6 +25,22 @@ export const Header = styled.div`
   align-items: center;
 
   padding: 0 144px;
+
+  > a {
+    font-size: 16px;
+    font-weight: 400;
+
+    color: ${({ theme }) => theme.COLORS.PINK};
+
+    display: flex;
+    align-items: center;
+
+    > svg {
+      margin-right: 8px;
+      font-size: 16px;
+      color: ${({ theme }) => theme.COLORS.PINK};
+    }
+  }
 `;
 
 export const Form = styled.div`
