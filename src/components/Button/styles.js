@@ -4,8 +4,11 @@ export const Container = styled.button`
   width: 100%;
   height: 56px;
 
-  background-color: ${({ theme }) => theme.COLORS.PINK};
-  color: ${({ theme }) => theme.COLORS.GRAY_300};
+  background-color: ${({ theme, isBlack }) =>
+    isBlack ? theme.COLORS.BACKGROUND_600 : theme.COLORS.PINK};
+
+  color: ${({ theme, isBlack }) =>
+    isBlack ? theme.COLORS.PINK : theme.COLORS.GRAY_300};
 
   font-size: 16px;
   font-weight: 500;
@@ -18,6 +21,14 @@ export const Container = styled.button`
   align-items: center;
   justify-content: center;
   gap: 8px;
+
+  /* .button-pink {
+    background-color: ${({ theme }) => theme.COLORS.PINK};
+  }
+
+  .button-black {
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
+  } */
 `;
 
 //* 312E38*/
