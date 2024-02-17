@@ -12,6 +12,10 @@ export const Container = styled.div`
 
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 768px) {
+      padding: 20px;
+    }
   }
 `;
 
@@ -40,6 +44,11 @@ export const Header = styled.div`
       font-size: 16px;
       color: ${({ theme }) => theme.COLORS.PINK};
     }
+  }
+
+  @media (max-width: 768px) {
+    align-items: start;
+    padding: 30px;
   }
 `;
 
@@ -87,5 +96,17 @@ export const ProfileImg = styled.div`
     position: absolute;
     bottom: 8px;
     right: 2px;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 130px;
+      height: 130px;
+    }
+
+    button {
+      width: 35px;
+      height: 35px;
+    }
   }
 `;

@@ -11,6 +11,8 @@ export const Container = styled.div`
 
   border-radius: 14px;
 
+  padding: 0 16px;
+
   > input {
     height: 56px;
     width: 100%;
@@ -26,14 +28,7 @@ export const Container = styled.div`
     }
 
     > svg {
-      margin-left: 18px;
       color: ${({ theme }) => theme.COLORS.GRAY_500};
-    }
-
-    @media (max-width: 768px) {
-      height: 40px;
-      padding: 12px;
-      font-size: 13px;
     }
   }
 `;
