@@ -67,6 +67,10 @@ export const Form = styled.form`
     display: flex;
     align-items: center;
   }
+
+  @media (max-width: 576px) {
+    padding: 20px;
+  }
 `;
 
 export const Background = styled.div`
