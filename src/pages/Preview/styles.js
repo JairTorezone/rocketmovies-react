@@ -95,5 +95,30 @@ export const Container = styled.div`
       flex-direction: column;
       gap: 20px;
     }
+
+    @media (max-width: 576px) {
+      padding: 30px 30px;
+
+      .title {
+        flex-direction: column;
+        align-items: start;
+
+        h2 {
+          font-size: 22px;
+        }
+      }
+
+      .tags {
+        button {
+          font-size: 12px;
+        }
+      }
+
+      .description {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
   }
 `;
