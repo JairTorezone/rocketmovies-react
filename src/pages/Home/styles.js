@@ -25,6 +25,14 @@ export const Content = styled.div`
 
     padding-bottom: 41px;
   }
+
+  @media (max-width: 576px) {
+    padding: 40px 15px;
+
+    h2 {
+      font-size: 22px;
+    }
+  }
 `;
 
 export const Assessment = styled.div`

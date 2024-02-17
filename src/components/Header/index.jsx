@@ -11,7 +11,6 @@ export function Header() {
         <Input placeholder="Pesquise pelo Titulo" />
       </Form>
       <Profile>
-        
         <Link to="/profile">
           <img
             src="https://github.com/jairtorezone.png"

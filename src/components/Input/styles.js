@@ -24,9 +24,16 @@ export const Container = styled.div`
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_500};
     }
-  }
-  > svg {
-    margin-left: 18px;
-    color: ${({ theme }) => theme.COLORS.GRAY_500};
+
+    > svg {
+      margin-left: 18px;
+      color: ${({ theme }) => theme.COLORS.GRAY_500};
+    }
+
+    @media (max-width: 768px) {
+      height: 40px;
+      padding: 12px;
+      font-size: 13px;
+    }
   }
 `;

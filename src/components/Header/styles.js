@@ -21,6 +21,29 @@ export const Container = styled.div`
 
     color: ${({ theme }) => theme.COLORS.PINK};
   }
+
+  @media (max-width: 992px) {
+    padding: 0 30px;
+    gap: 30px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 30px;
+    gap: 40px;
+
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 20px;
+    gap: 20px;
+
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const Form = styled.form`
@@ -44,7 +67,13 @@ export const Profile = styled.div`
     }
   }
 
-  > a img {
+  @media (max-width: 576px) {
+    div {
+      display: none;
+    }
+  }
+
+  a img {
     width: 64px;
     height: 64px;
     border-radius: 50%;

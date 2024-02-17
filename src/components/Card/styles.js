@@ -29,6 +29,22 @@ export const Container = styled.div`
     gap: 8px;
     margin-top: 15px;
   }
+
+  @media (max-width: 576px) {
+    padding: 15px;
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    button {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const Star = styled.button`
