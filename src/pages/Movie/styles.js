@@ -72,6 +72,31 @@ export const Container = styled.div`
 
       margin-bottom: 40px;
     }
+
+    @media (max-width: 576px) {
+      padding: 20px;
+
+      section {
+        height: fit-content;
+      }
+
+      button {
+        width: fit-content;
+        padding: 10;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      svg {
+        font-size: 14px;
+      }
+
+      .logout {
+        button {
+          font-size: 13px;
+        }
+      }
+    }
   }
 `;
 
@@ -85,5 +110,12 @@ export const Form = styled.form`
     display: flex;
     gap: 40px;
     margin-bottom: 40px;
+  }
+
+  @media (max-width: 576px) {
+    div {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 `;

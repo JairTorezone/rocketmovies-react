@@ -31,4 +31,12 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.COLORS.GRAY_500};
     }
   }
+
+  @media (max-width: 576px) {
+    input {
+      height: 40px;
+      font-size: 14px;
+      padding: 0;
+    }
+  }
 `;
