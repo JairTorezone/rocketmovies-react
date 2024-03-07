@@ -17,8 +17,12 @@ export function SignIn() {
         <h3>Faça Seu Login</h3>
 
         <div>
-          <Input placeholder="E-mail" icon={RiLockPasswordLine} />
-          <Input placeholder="Senha" icon={MdOutlineEmail} />
+          <Input placeholder="E-mail" icon={MdOutlineEmail} />
+          <Input
+            placeholder="Senha"
+            type="password"
+            icon={RiLockPasswordLine}
+          />
           <Button title="Entrar" />
         </div>
 
