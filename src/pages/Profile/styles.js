@@ -56,11 +56,13 @@ export const Form = styled.div`
   width: 100%;
   max-width: 340px;
 
+  position: relative;
+
   display: flex;
   flex-direction: column;
   gap: 8px;
 
-  > div:nth-child(3) {
+  > div:nth-child(4) {
     margin-top: 24px;
   }
 
@@ -69,11 +71,12 @@ export const Form = styled.div`
   }
 `;
 
-export const ProfileImg = styled.div`
+export const Avatar = styled.div`
   position: relative;
-
-  padding: 0;
   margin: -90px 0 64px;
+
+  display: flex;
+  justify-content: center;
 
   > img {
     width: 186px;
@@ -82,20 +85,32 @@ export const ProfileImg = styled.div`
     border-radius: 50%;
   }
 
-  > button {
+  > label {
     width: 48px;
     height: 48px;
 
+    background-color: ${({ theme }) => theme.COLORS.PINK};
     border-radius: 50%;
 
-    background: ${({ theme }) => theme.COLORS.PINK};
-    border: none;
-    font-size: 20px;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     position: absolute;
-    bottom: 8px;
-    right: 2px;
+    bottom: 5px;
+    right: 75px;
+
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+    }
   }
 
   @media (max-width: 768px) {

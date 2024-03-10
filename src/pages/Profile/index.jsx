@@ -8,7 +8,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { Input } from "../../components/Input";
 import { CiCamera } from "react-icons/ci";
 
-import { Container, Header, Form, ProfileImg } from "./styles";
+import { Container, Header, Form, Avatar } from "./styles";
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 
@@ -22,6 +22,9 @@ export function Profile() {
   const [passwodOld, setPasswodOld] = useState();
   const [passwordNew, setPasswordNew] = useState();
 
+  const [avatar, setAvatar] = useState(user.avatar);
+  const [avatarFile, setAvatarFile] = useState(null);
+
   async function handleUpdate() {
     const user = {
       name,
@@ -30,7 +33,15 @@ export function Profile() {
       old_password: passwodOld,
     };
 
-    await updateProfile({ user });
+    await updateProfile({ user, avatarFile });
+  }
+
+  async function handleChangeAvatar(event) {
+    const file = event.target.files[0];
+    setAvatarFile(file);
+
+    const imagePreview = URL.createObjectURL(file);
+    setAvatar(imagePreview);
   }
 
   return (
@@ -43,17 +54,20 @@ export function Profile() {
       </Header>
 
       <main>
-        <ProfileImg>
-          <img
-            src="https://github.com/jairtorezone.png"
-            alt="Foto do usuário"
-          />
-          <button>
-            <CiCamera />
-          </button>
-        </ProfileImg>
-
         <Form>
+          <Avatar>
+            <img
+              // src={avatar}
+              src="https://github.com/jairtorezone.png"
+              alt="Foto do usuário"
+              onChange={handleChangeAvatar}
+            />
+            <label htmlFor="avatar">
+              <CiCamera />
+              <input id="avatar" type="file" onChange={handleChangeAvatar} />
+            </label>
+          </Avatar>
+
           <Input
             icon={FiUser}
             type="text"
