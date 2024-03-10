@@ -9,7 +9,7 @@ import { Input } from "../../components/Input";
 
 import { Container, Form, Background } from "./styles";
 import { Button } from "../../components/Button";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { api } from "../../services/api";
 
