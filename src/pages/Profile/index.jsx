@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { FaArrowLeft } from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
@@ -10,7 +12,27 @@ import { Container, Header, Form, ProfileImg } from "./styles";
 import { Button } from "../../components/Button";
 import { Link } from "react-router-dom";
 
+import { useAuth } from "../../hooks/auth";
+
 export function Profile() {
+  const { user, updateProfile } = useAuth();
+
+  const [name, setName] = useState(user.name);
+  const [email, setEmail] = useState(user.email);
+  const [passwodOld, setPasswodOld] = useState();
+  const [passwordNew, setPasswordNew] = useState();
+
+  async function handleUpdate() {
+    const user = {
+      name,
+      email,
+      password: passwordNew,
+      old_password: passwodOld,
+    };
+
+    await updateProfile({ user });
+  }
+
   return (
     <Container>
       <Header>
@@ -32,15 +54,34 @@ export function Profile() {
         </ProfileImg>
 
         <Form>
-          <Input icon={FiUser} placeholder="Jair Torezone" />
-          <Input icon={MdOutlineEmail} placeholder="Senha atual" />
+          <Input
+            icon={FiUser}
+            type="text"
+            value={name}
+            placeholder="Nome"
+            onChange={(e) => setName(e.target.value)}
+          />
           <Input
             icon={RiLockPasswordLine}
-            placeholder="jairtorezone@gmail.com"
+            type="text"
+            value={email}
+            placeholder="E-mail"
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <Input icon={RiLockPasswordLine} placeholder="Nova senha" />
+          <Input
+            icon={MdOutlineEmail}
+            type="password"
+            placeholder="Senha atual"
+            onChange={(e) => setPasswodOld(e.target.value)}
+          />
+          <Input
+            icon={RiLockPasswordLine}
+            type="password"
+            placeholder="Nova senha"
+            onChange={(e) => setPasswordNew(e.target.value)}
+          />
 
-          <Button title="Salvar" />
+          <Button title="Salvar" onClick={handleUpdate} />
         </Form>
       </main>
     </Container>
