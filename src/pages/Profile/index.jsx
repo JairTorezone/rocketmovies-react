@@ -63,11 +63,7 @@ export function Profile() {
       <main>
         <Form>
           <Avatar>
-            <img
-              src={avatar}
-              // src="https://github.com/jairtorezone.png"
-              alt="Foto do usuário"
-            />
+            <img src={avatar} alt="Foto do usuário" />
             <label htmlFor="avatar">
               <CiCamera />
               <input id="avatar" type="file" onChange={handleChangeAvatar} />

@@ -1,6 +1,8 @@
+import { FaPlus } from "react-icons/fa6";
 import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { Container, Content, Assessment } from "./styles";
+import { Link } from "react-router-dom";
 
 export function Home() {
   return (
@@ -8,7 +10,13 @@ export function Home() {
       <Header />
 
       <Content>
-        <h2>Meus Filmes </h2>
+        <div to="/movie/:id" className="titles">
+          <h2>Meus Filmes </h2>
+          <Link to="/movie/:id">
+            <FaPlus />
+            Adicionar filme
+          </Link>
+        </div>
 
         <Assessment>
           <Card />

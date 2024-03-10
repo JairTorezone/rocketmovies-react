@@ -19,11 +19,37 @@ export const Content = styled.div`
   margin: 0 auto;
   padding: 50px 100px;
 
-  > h2 {
-    font-size: 32px;
-    font-weight: 400;
+  .titles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    padding-bottom: 41px;
+    padding-bottom: 37px;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 400;
+    }
+
+    a {
+      padding: 13px 32px;
+      color: #1c1b1e;
+
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      border-radius: 8px;
+      background: #ff859b;
+      border: none;
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
   }
 
   @media (max-width: 576px) {
