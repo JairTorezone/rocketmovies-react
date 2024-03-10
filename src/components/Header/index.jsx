@@ -2,10 +2,17 @@ import { Input } from "../Input";
 import { Container, Form, Profile } from "./styles";
 import { Link } from "react-router-dom";
 
+import { api } from "../../services/api";
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
+
 import { useAuth } from "../../hooks/auth";
 
 export function Header() {
-  const { signOut } = useAuth();
+  const { signOut, user } = useAuth();
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholder;
 
   return (
     <Container>
@@ -16,14 +23,11 @@ export function Header() {
       </Form>
       <Profile>
         <Link to="/profile">
-          <img
-            src="https://github.com/jairtorezone.png"
-            alt="Foto do usuário"
-          />
+          <img src={avatarUrl} alt={user.name} />
         </Link>
 
         <div>
-          <strong>Jair Torezone</strong>
+          <strong>{user.name}</strong>
           <Link to="/" onClick={signOut}>
             sair
           </Link>
