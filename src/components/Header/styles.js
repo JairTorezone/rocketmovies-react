@@ -15,7 +15,7 @@ export const Container = styled.div`
 
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
 
-  > h2 {
+  > a {
     font-size: 24px;
     font-weight: 700;
 
@@ -31,7 +31,7 @@ export const Container = styled.div`
     padding: 0 30px;
     gap: 40px;
 
-    h2 {
+    a {
       font-size: 18px;
     }
   }

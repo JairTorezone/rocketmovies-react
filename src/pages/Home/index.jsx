@@ -12,7 +12,7 @@ export function Home() {
       <Content>
         <div to="/movie/:id" className="titles">
           <h2>Meus Filmes </h2>
-          <Link to="/movie/:id">
+          <Link to="/movie">
             <FaPlus />
             Adicionar filme
           </Link>

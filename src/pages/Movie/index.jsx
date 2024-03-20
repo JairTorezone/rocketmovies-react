@@ -6,9 +6,42 @@ import { FaArrowLeft } from "react-icons/fa";
 import { Container, Form } from "./styles";
 import { NoteItem } from "../../components/NoteItem";
 import { Button } from "../../components/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import { api } from "../../services/api";
 
 export function Movie() {
+  const [title, setTitle] = useState("");
+  const [rating, setRating] = useState(0);
+  const [description, setDescription] = useState("");
+
+  const [tags, setTags] = useState([]);
+  const [newTags, setNewTags] = useState("");
+
+  const navigate = useNavigate();
+
+  function handleAddTags() {
+    setTags((prevState) => [...prevState, newTags]);
+    setNewTags("");
+  }
+
+  function handleRemoveTags(deleted) {
+    setTags((prevState) => prevState.filter((tag) => tag !== deleted));
+  }
+
+  async function handleSaveMovie() {
+    await api.post("/movies", {
+      title,
+      rating,
+      description,
+      tags,
+    });
+
+    alert("Filme cadastrado com sucesso!");
+    navigate("/");
+  }
+
   return (
     <Container>
       <Header />
@@ -25,24 +58,51 @@ export function Movie() {
 
         <Form>
           <div>
-            <Input placeholder="Título" />
-            <Input placeholder="Sua nota (de 0 a 5)" />
+            <Input
+              placeholder="Título"
+              type="text"
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <Input
+              placeholder="Sua nota (de 0 a 5)"
+              type="number"
+              min="1"
+              max="5"
+              onChange={(e) => setRating(e.target.value)}
+            />
           </div>
 
-          <Textarea placeholder="Observações" />
+          <Textarea
+            placeholder="Observações"
+            type="text"
+            onChange={(e) => setDescription(e.target.value)}
+          />
         </Form>
 
         <section>
           <h3>Marcadores</h3>
           <div className="tags">
-            <NoteItem title="react" />
-            <NoteItem isNew title="Novo marcador" />
+            {tags.map((tag, index) => (
+              <NoteItem
+                key={String(index)}
+                value={tag}
+                onClick={() => handleRemoveTags(tag)}
+              />
+            ))}
+
+            <NoteItem
+              isNew
+              placeholder="Novo marcador"
+              value={newTags}
+              onChange={(e) => setNewTags(e.target.value)}
+              onClick={handleAddTags}
+            />
           </div>
         </section>
 
         <div className="logout">
           <Button isBlack title="Excluir filme" />
-          <Button title="Salvar alterações" />
+          <Button title="Salvar alterações" onClick={handleSaveMovie} />
         </div>
       </main>
     </Container>

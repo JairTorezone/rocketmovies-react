@@ -16,7 +16,7 @@ export function Header() {
 
   return (
     <Container>
-      <h2>RocketMovies</h2>
+      <Link to="/">RocketMovies</Link>
 
       <Form>
         <Input placeholder="Pesquise pelo Titulo" />
