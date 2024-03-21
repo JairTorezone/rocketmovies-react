@@ -31,6 +31,29 @@ export function Movie() {
   }
 
   async function handleSaveMovie() {
+    if (!title) {
+      return alert("Digite o título do filme");
+    }
+
+    if (!rating) {
+      return alert("Informe a nota de 1 a 5");
+    }
+
+    if (rating < 1 || rating > 5) {
+      return alert("A avaliação tem que está entre (1 e 5 )");
+      //  console.log(rating);
+    }
+
+    if (!description) {
+      return alert("Informe a descrição, a sinopse do filme");
+    }
+
+    if (newTags) {
+      return alert(
+        "Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio."
+      );
+    }
+
     await api.post("/movies", {
       title,
       rating,
