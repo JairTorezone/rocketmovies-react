@@ -21,14 +21,4 @@ export const Container = styled.button`
   align-items: center;
   justify-content: center;
   gap: 8px;
-
-  /* .button-pink {
-    background-color: ${({ theme }) => theme.COLORS.PINK};
-  }
-
-  .button-black {
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
-  } */
 `;
-
-//* 312E38*/

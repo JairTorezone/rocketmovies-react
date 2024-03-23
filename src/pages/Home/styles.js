@@ -13,11 +13,14 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  width: 100%;
   grid-area: content;
   overflow-y: auto;
 
   margin: 0 auto;
   padding: 50px 100px;
+  /* 
+  border: 1px solid red; //borda vermelha */
 
   .titles {
     display: flex;
