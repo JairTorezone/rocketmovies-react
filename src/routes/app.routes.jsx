@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Movie } from "../pages/Movie";
 import { Profile } from "../pages/Profile";
-import { Preview } from "../pages/Preview";
+import { Details } from "../pages/Details";
 
 export function AppRoutes() {
   return (
@@ -11,7 +11,7 @@ export function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/preview/:id" element={<Preview />} />
+      <Route path="/details/:id" element={<Details />} />
       <Route path="/movie" element={<Movie />} />
     </Routes>
   );

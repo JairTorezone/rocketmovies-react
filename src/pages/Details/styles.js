@@ -7,6 +7,8 @@ export const Container = styled.div`
   display: grid;
   grid-template-rows: 116px auto;
 
+  background: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+
   grid-template-areas:
     "header"
     "content";
@@ -87,7 +89,7 @@ export const Container = styled.div`
       margin: 40px 0;
 
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
 
     .description {

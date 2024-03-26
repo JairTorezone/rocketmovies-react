@@ -15,7 +15,7 @@ export function Home() {
   const navigate = useNavigate();
 
   function handleOpenNoteMovie(id) {
-    navigate(`/preview/${id}`);
+    navigate(`/details/${id}`);
   }
 
   useEffect(() => {
