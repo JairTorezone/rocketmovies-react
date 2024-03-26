@@ -4,13 +4,15 @@ import { Note } from "../../components/Note";
 
 import { Container, Content, Assessment } from "./styles";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { api } from "../../services/api";
 
 import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../../hooks/search";
 
 export function Home() {
   const [notes, setNotes] = useState([]);
+  const searchMovie = useContext(SearchContext);
 
   const navigate = useNavigate();
 
@@ -20,12 +22,14 @@ export function Home() {
 
   useEffect(() => {
     async function fetchNotes() {
-      const response = await api.get(`/movies?title&tags`);
+      const response = await api.get(
+        `/movies?title=${searchMovie.searchValue}&tags`
+      );
       setNotes(response.data);
     }
 
     fetchNotes();
-  }, []);
+  }, [searchMovie]);
   return (
     <Container>
       <Header />
