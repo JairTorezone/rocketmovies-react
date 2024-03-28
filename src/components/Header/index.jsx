@@ -17,10 +17,6 @@ export function Header() {
     ? `${api.defaults.baseURL}/files/${user.avatar}`
     : avatarPlaceholder;
 
-  function show() {
-    console.log(searchMovie);
-  }
-
   return (
     <Container>
       <Link to="/">RocketMovies</Link>
@@ -29,7 +25,6 @@ export function Header() {
         <Input
           placeholder="Pesquise pelo Titulo"
           onChange={(e) => searchMovie.setSearchValue(e.target.value)}
-          onClick={show}
         />
       </Form>
       <Profile>

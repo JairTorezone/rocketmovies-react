@@ -5,9 +5,4 @@ export const Container = styled.button`
 
   border: none;
   background: none;
-
-  > svg {
-    font-size: 14px;
-    color: ${({ theme }) => theme.COLORS.PINK};
-  }
 `;

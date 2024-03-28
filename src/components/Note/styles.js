@@ -20,6 +20,7 @@ export const Container = styled.button`
     font-size: 24px;
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
+
   > p {
     font-size: 14px;
     font-weight: 400;
@@ -33,11 +34,25 @@ export const Container = styled.button`
     margin-top: 8px;
     display: flex;
     gap: 4px;
+
+    position: relative;
   }
   > footer {
     width: 100%;
     display: flex;
     margin-top: 24px;
     gap: 8px;
+  }
+
+  @media (max-width: 498px) {
+    h1 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 13px;
+    }
+    footer {
+      flex-wrap: wrap;
+    }
   }
 `;

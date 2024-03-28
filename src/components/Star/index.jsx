@@ -1,10 +1,10 @@
 import { Container } from "./styles";
-import { CiStar } from "react-icons/ci";
+import starImg from "../../assets/star.svg";
 
 export function Star({ children, ...rest }) {
   return (
     <Container {...rest}>
-      <CiStar />
+      <img src={starImg} alt="star" />
     </Container>
   );
 }

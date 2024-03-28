@@ -1,4 +1,5 @@
 import { Container } from "./styles";
+
 import { Tag } from "../Tag";
 import { Star } from "../Star";
 
@@ -8,7 +9,7 @@ import { useEffect, useState } from "react";
 
 export function Note({ data, ...rest }) {
   const [note, setNote] = useState(null);
-  const [numStar, setNumStar] = useState(1);
+  const [numStar, setNumStar] = useState(5);
 
   const listStar = countStar(numStar);
 
@@ -29,7 +30,6 @@ export function Note({ data, ...rest }) {
       if (response.data.rating !== null) {
         const star = Number(response.data.rating);
 
-        console.log(typeof star);
         setNumStar(star);
       } else {
         setNumStar(1);

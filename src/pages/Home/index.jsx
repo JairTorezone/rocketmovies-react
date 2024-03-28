@@ -1,10 +1,11 @@
+import { Container, Content, Assessment } from "./styles";
+
 import { FaPlus } from "react-icons/fa6";
 import { Header } from "../../components/Header";
 import { Note } from "../../components/Note";
 
-import { Container, Content, Assessment } from "./styles";
-import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { api } from "../../services/api";
 
 import { useNavigate } from "react-router-dom";
