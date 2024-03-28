@@ -3,7 +3,7 @@ import { CiStar } from "react-icons/ci";
 
 export function Star({ children, ...rest }) {
   return (
-    <Container type="button" {...rest}>
+    <Container {...rest}>
       <CiStar />
     </Container>
   );

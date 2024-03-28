@@ -30,6 +30,15 @@ export function Movie() {
     setTags((prevState) => prevState.filter((tag) => tag !== deleted));
   }
 
+  function handleDeleteMovie() {
+    const confirm = window.confirm("Deseja realmente remover a nota?");
+
+    if (confirm) {
+      setTitle("Novo");
+      console.log(title);
+    }
+  }
+
   async function handleSaveMovie() {
     if (!title) {
       return alert("Digite o título do filme");
@@ -124,7 +133,6 @@ export function Movie() {
         </section>
 
         <div className="logout">
-          <Button isBlack title="Excluir filme" />
           <Button title="Salvar alterações" onClick={handleSaveMovie} />
         </div>
       </main>

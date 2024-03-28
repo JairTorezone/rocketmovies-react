@@ -8,8 +8,9 @@ import { Header } from "../../components/Header";
 
 import { Star } from "../../components/Star";
 import { Tag } from "../../components/Tag";
+import { Button } from "../../components/Button";
 
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 
@@ -18,7 +19,13 @@ export function Details() {
   const [numStar, setNumStar] = useState(1);
 
   const { user } = useAuth();
+
   const params = useParams();
+  const navigate = useNavigate();
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarPlaceholder;
 
   const listStar = countStar(numStar);
 
@@ -29,6 +36,16 @@ export function Details() {
     }
 
     return stars;
+  }
+
+  async function handleDeleteMovie() {
+    const confirm = window.confirm("Deseja realmente remover este filme?");
+
+    if (confirm) {
+      await api.delete(`/movies/${params.id}`);
+    }
+
+    navigate("/");
   }
 
   useEffect(() => {
@@ -68,7 +85,7 @@ export function Details() {
 
           <section className="created-at">
             <div className="user">
-              <img src="" alt="icone user" />
+              <img src={avatarUrl} alt="icone user" />
               <span>{`Por ${user.name}`}</span>
 
               <div className="times">
@@ -89,6 +106,8 @@ export function Details() {
           <div className="description">
             <p>{note.description}</p>
           </div>
+
+          <Button isblack title="Excluir filme" onClick={handleDeleteMovie} />
         </main>
       )}
     </Container>

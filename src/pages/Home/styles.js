@@ -19,8 +19,6 @@ export const Content = styled.div`
 
   margin: 0 auto;
   padding: 50px 100px;
-  /* 
-  border: 1px solid red; //borda vermelha */
 
   .titles {
     display: flex;
@@ -32,6 +30,12 @@ export const Content = styled.div`
     h2 {
       font-size: 32px;
       font-weight: 400;
+    }
+
+    @media (max-width: 498px) {
+      h2 {
+        font-size: 16px;
+      }
     }
 
     a {
@@ -53,9 +57,18 @@ export const Content = styled.div`
       align-items: center;
       gap: 5px;
     }
+
+    @media (max-width: 498px) {
+      a {
+        padding: 12px;
+        gap: 5px;
+
+        font-size: 12px;
+      }
+    }
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 679px) {
     padding: 40px 15px;
 
     h2 {

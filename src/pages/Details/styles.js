@@ -70,6 +70,7 @@ export const Container = styled.div`
           height: 16px;
           width: 16px;
           border-radius: 50%;
+          background-color: #fff;
         }
       }
 
@@ -121,6 +122,10 @@ export const Container = styled.div`
           font-size: 14px;
         }
       }
+    }
+
+    > button {
+      margin-top: 40px;
     }
   }
 `;
